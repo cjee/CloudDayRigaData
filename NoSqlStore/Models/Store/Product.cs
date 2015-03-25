@@ -24,12 +24,4 @@ namespace NoSqlStore.Models.Store
         public string ImageUrl { get; set; }
 
     }
-
-
-    public class ProductProperties
-    {
-        public string Name { get; set; }
-
-        public string Value { get; set; }
-    }
 }
