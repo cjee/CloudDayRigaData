@@ -1,0 +1,70 @@
+﻿@model NoSqlStore.Models.CatalogViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form>
+    <input type="text" name="search" />
+    <button type="submit">Meklēt</button>
+</form>
+
+<p>Kopā: @Model.TotalCount</p>
+
+@foreach (var item in Model.Categories)
+{
+    @Html.ActionLink(item, "Index", new { category = item})
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Image
+        </th>
+        <th>
+            Nosaukums
+        </th>
+        <th>
+           Apraksts
+        </th>
+        <th>
+            Kategorija
+        </th>
+        <th>
+            Cena
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Products)
+    {
+            <tr>
+                <td>
+                    <img src="@item.ImageUrl" alt="@item.Name" width="50" height="50" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categorie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+              
+            </tr>
+ 
+    }
+</table>
+
+<p>
+    Lapas: 
+    @for(int i = 0; i<=(Model.TotalCount-1)/Model.SearchParams.PageSize;i++)
+    {
+        @Html.ActionLink((i + 1).ToString(), "Index", new { page = i })
+    }
+</p>

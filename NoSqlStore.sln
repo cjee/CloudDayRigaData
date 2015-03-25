@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoSqlStore", "NoSqlStore\NoSqlStore.csproj", "{82D26103-51FB-4F75-A39C-875AF7D26358}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{76E4A121-FF5F-4B61-87A3-177E85A5E4A2}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{024783BE-CDF7-4701-B726-9793F235B6F5}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\NoSqlStore-WAWS-dev.json = PublishScripts\Configurations\NoSqlStore-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{408E6DA0-ADB0-4784-A492-6B75AF87DE23}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailProcessor", "EmailProcessor\EmailProcessor.csproj", "{11BD0AA0-B94E-4C7B-9492-CC4AA0D2D42A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82D26103-51FB-4F75-A39C-875AF7D26358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D26103-51FB-4F75-A39C-875AF7D26358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D26103-51FB-4F75-A39C-875AF7D26358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D26103-51FB-4F75-A39C-875AF7D26358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11BD0AA0-B94E-4C7B-9492-CC4AA0D2D42A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11BD0AA0-B94E-4C7B-9492-CC4AA0D2D42A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11BD0AA0-B94E-4C7B-9492-CC4AA0D2D42A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11BD0AA0-B94E-4C7B-9492-CC4AA0D2D42A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{024783BE-CDF7-4701-B726-9793F235B6F5} = {76E4A121-FF5F-4B61-87A3-177E85A5E4A2}
+	EndGlobalSection
+EndGlobal

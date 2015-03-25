@@ -1,0 +1,50 @@
+Execute REST requests (POST HTTP1.1)
+##01
+https://<servicename>.search.windows.net/datasources?api-version=2015-02-28
+
+Content-Type: application/json
+api-key: <api-key>
+
+
+{
+    "name" : "ddbsource",
+    "type" : "documentdb",
+    "credentials" :
+    {
+        "connectionString": "AccountEndpoint=https://<service-name>.documents.azure.com;Database=StoreDatabase;AccountKey=<account-key>"
+    },
+    "container" : { "name" : "Product" }
+}
+
+
+
+##02
+https://<servicename>.search.windows.net/indexes/?api-version=2015-02-28
+
+Content-Type: application/json
+api-key: <api-key>
+
+{
+    "name":"productsindex",
+    "fields":[
+        {"name":"id","type":"Edm.String","searchable":false,"filterable":false,"retrievable":true,"sortable":false,"facetable":false,"key":true},
+        {"name":"Name","type":"Edm.String","searchable":true,"filterable":false,"retrievable":true,"sortable":true,"facetable":false,"key":false},
+        {"name":"Description","type":"Edm.String","searchable":true,"filterable":false,"retrievable":true,"sortable":false,"facetable":false,"key":false},
+        {"name":"Categorie","type":"Edm.String","searchable":true,"filterable":true,"retrievable":true,"sortable":true,"facetable":true,"key":false},
+        {"name":"Price","type":"Edm.Double","searchable":false,"filterable":true,"retrievable":true,"sortable":false,"facetable":true,"key":false},
+        {"name":"ImageUrl","type":"Edm.String","searchable":false,"filterable":false,"retrievable":true,"sortable":false,"facetable":false,"key":false}
+    ]
+}
+
+
+##03
+https://<servicename>.search.windows.net/indexers?api-version=2015-02-28
+
+Content-Type: application/json
+api-key: <api-key>
+
+{
+       "name" : "productsindexer",
+       "dataSourceName" : "ddbsource",
+       "targetIndexName" : "productsindex"
+}
